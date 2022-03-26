@@ -1,0 +1,151 @@
+<% layout('../index') -%>
+<!-- modalupdate -->
+<div class="modal fade rounded-0" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">up kategori</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="/contentcreatekategoriupdate" method="post">
+            <div class="modal-body">
+                <input type="text" name="kategoriname" class="form-control rounded-0" id="inputAddress">
+                <input type="hidden" name="idvalue" class="form-control rounded-0" id="idvalue">
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary rounded-0" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary rounded-0">Save changes</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<!-- endmodalupdate -->
+
+<!-- modaldelete -->
+<div class="modal fade rounded-0 text-light" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content bg-danger">
+        <div class="modal-header" style="border: none;">
+          <h5 class="modal-title page-hero d-flex align-items-center justify-content-center">
+              <p id="deletemdaltitle"></p>
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <small class="page-hero d-flex align-items-center justify-content-center">
+            <p>tindakan ini dapat menghapus data secara permanen</p>
+        </small>
+        <div class="modal-footer"style="border: none;">
+        <button type="button" class="btn btn-secondary rounded-0" data-dismiss="modal">Cancle</button>
+        <a id="deletetelink">
+            <button type="button" class="btn btn-dark rounded-0">Delete</button>
+        </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<!-- endmodaldelete -->
+
+<div class="card shadow mb-4 rounded-0">
+    
+    <div class="card-body row">
+        <!-- form -->
+        <form class="form-inline" action="/contentcreatekategoripost" method="post">
+            <div class="form-group mr-2">
+              <input type="text" name="kategoriname" class="form-control rounded-0" id="exampleFormControlInput1" placeholder="createKategori...">
+            </div>
+            <button type="submit" class="btn btn-primary form-control rounded-0">Create</button>
+          </form>
+          <!-- mesage -->
+          <%if(suksesmessage.length != 0 ){%>
+               <button type="menu" class="btn btn-outline-0 text-success"><i class="far fa-check-circle"><%=suksesmessage%></i></button>
+          <%}%>
+          <%if(erormesage.length != 0 ){%>
+            <button type="menu" class="btn btn-outline-0 text-warning"><i class="fas fa-exclamation-triangle"><%=erormesage%></i></button>
+          <%}%>
+          <!-- endmesage -->
+        <!-- endform -->
+    </div>
+</div>
+
+<div class="card shadow mb-4 rounded-0">
+    <div class="card-header py-3">
+        <div class="col">
+            <div class="row">
+                <h6 class="m-0 font-weight-bold text-primary mr-2">List of Content</h6>
+                <% if (suksesmessagedelete != 0) {%>
+                  <i id="deletemessagesuccess" class="far fa-check-circle text-success"> <%=suksesmessagedelete%></i>
+                <%}%>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                
+                <!-- tablel -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0"
+                            role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                            <thead>
+                                <tr role="row">
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                        colspan="1" aria-label="Name: activate to sort column ascending"
+                                        style="width: 161px;">KategoriName</th>
+                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable"
+                                        rowspan="1" colspan="1"
+                                        aria-label="Position: activate to sort column descending"
+                                        style="width: 248px;" aria-sort="ascending">Action</th>
+
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th rowspan="1" colspan="1">Name</th>
+                                    <th rowspan="1" colspan="1">Position</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <%data.forEach((i)=>{%>
+                                <tr class="odd">
+                                    <td class=""><%=i.kategoriname%></td>
+                                    <td class="sorting_1">
+                                        <button title="update" type="button" value="<%=i.kategoriname%>" class="btnupdate btn btn-sm rounded-0" data-toggle="modal" data-target="#exampleModal">
+                                            <i class="far fa-edit text-warning"></i>
+                                        </button>
+                                        <input class="idvalue" type="hidden" value="<%=i.id%>">
+                                         
+                                        <button title="delete" type="button" value="<%=i.kategoriname%>" class="btndelete btn btn-sm rounded-0" data-toggle="modal" data-target="#deletemodal">
+                                            <i class="fas fa-trash-alt text-danger"></i>
+                                        </button>
+                                         <%if(suksesmessageup == i.id){%>
+                                           <small class="text-success">
+                                            <i class="far fa-check-circle"> success update</i>
+                                           </small> 
+                                         <%}%>
+                                         <%if(erormessageup == i.id){%>
+                                           <small class="text-warning">
+                                            <i class="fas fa-exclamation"> can't update <%=i.kategoriname%> to <%=erormessageupkategoriname%></i>
+                                           </small> 
+                                         <%}%>
+                                         
+                                    </td>
+                                </tr>
+                               <%})%>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- table -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="module" src="/admin/js/createkategori.js"></script>

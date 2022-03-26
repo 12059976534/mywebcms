@@ -1,0 +1,159 @@
+<% layout('../base/base') -%>
+
+    <%- partial('../partials/crosel') %>
+    <link href="/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- modalregister -->
+<div class="modal fade"id="registermodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">up kategori</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="/userregister" method="post">
+            <div class="modal-body">
+                <label for="#inputname">name</label>
+                <input type="text" name="kategoriname" style="box-shadow: none;" placeholder="Name..." class="form-control rounded-0" id="inputname">
+                <label for="#inputemail">email</label>
+                <input type="text" name="email" style="box-shadow: none;" placeholder="Email..." class="form-control rounded-0" id="inputemail">
+                <label for="#inputket">ket</label>
+                <textarea name="deskripsi" id="editor" style="box-shadow: none;" class="form-control" placeholder="pangkat/pekerjaan/ yang lainya" id="inputket" rows="3"></textarea>
+                <label for="#inputpassword">password</label>
+                <div class="input-group mb-3">
+                    <input type="password" style="box-shadow: none;" id="passwordinput" class="form-control rounded-0" placeholder="password..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button id="eyebuton" style="box-shadow: none;"  class="btn btn-outline-secondary rounded-0 disabled" type="button">
+                        <i id="iconeyebuton1" class="fas fa-eye-slash text-success"></i>
+                      </button>
+                    </div>
+                  </div>  
+                  <label for="#inputpassword">retype password</label>
+                  <div class="input-group mb-3">
+                      <input type="password" id="passwordinputretype" style="box-shadow: none;" class="form-control rounded-0" placeholder="password..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button id="eyebuttonretype" class="btn btn-outline-secondary rounded-0 disabled" style="box-shadow: none;" type="button">
+                          <i id="iconeyebuton2" class="fas fa-eye-slash"></i>
+                        </button>
+                      </div>
+                    </div>     
+                <!-- <input type="hidden" name="idvalue" class="form-control rounded-0" id="idvalue"> -->
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary rounded-0" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger rounded-0">Register</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<!-- endmodalregister -->
+
+        <!-- conten -->
+        <div class="row pb-2">
+            <div class="col-md-8">
+                <div class="row">
+                    <!-- conten1 -->
+                    <div class="col-md mb-2">
+                        <a href="" class="" style="text-decoration:none;">
+                            <div class="card rounded-0" style="min-width: 13rem;">
+                                <img class="card-img-top rounded-0"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzNsV7lfTwAUEvHew7eZUyc5mPRRI_lyzXwA&usqp=CAU"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <small class="text-danger">Author: andri wahyu anugrah</small>
+                                    <h5 class="card-title text-dark">express suqelize session</h5>
+                                    <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of
+                                        the card's content.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end of conten 1 -->
+                     <!-- conten2 -->
+                     <div class="col-md ">
+                        <div class="card rounded-0" style="min-width: 13rem;">
+                            <img class="card-img-top"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzNsV7lfTwAUEvHew7eZUyc5mPRRI_lyzXwA&usqp=CAU"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                    the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of conten 2 -->
+                     <!-- conten3 -->
+                     <div class="col-md">
+                        <div class="card rounded-0" style="min-width: 13rem;">
+                            <img class="card-img-top"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzNsV7lfTwAUEvHew7eZUyc5mPRRI_lyzXwA&usqp=CAU"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                    the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of conten 3 -->
+                     <!-- conten4 -->
+                     <div class="col-md">
+                        <div class="card rounded-0" style="min-width: 13rem;">
+                            <img class="card-img-top"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzNsV7lfTwAUEvHew7eZUyc5mPRRI_lyzXwA&usqp=CAU"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                    the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of conten 4 -->
+                    <!-- conten5 -->
+                    <div class="col-md">
+                        <div class="card rounded-0" style="min-width: 13rem;">
+                            <img class="card-img-top"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzNsV7lfTwAUEvHew7eZUyc5mPRRI_lyzXwA&usqp=CAU"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                    the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of conten 5 -->
+                </div>
+            </div>
+            <div class=" col-md-4">
+                <div class="row" >
+                    <div class="col-md">
+                        <form class="rounded-0 bg-light pl-3 pr-3 pb-3 pt-3">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                    placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                    else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control rounded-0" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <button type="submit" class="btn btn-danger rounded-0 mt-2">login</button>
+                            <a class="ml-3" href="" type="button" data-toggle="modal" data-target="#registermodal" >registrasi</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/registerform.js"></script>
+        <!-- conten -->

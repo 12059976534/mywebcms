@@ -1,0 +1,68 @@
+<% layout('../index') -%>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">List of Content</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    
+                    <!-- tablel -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0"
+                                role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                            colspan="1" aria-label="Name: activate to sort column ascending"
+                                            style="width: 161px;">title of content</th>
+                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable"
+                                            rowspan="1" colspan="1"
+                                            aria-label="Position: activate to sort column descending"
+                                            style="width: 248px;" aria-sort="ascending">creator</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                            colspan="1" aria-label="Salary: activate to sort column ascending"
+                                            style="width: 97px;">action</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th rowspan="1" colspan="1">title of content</th>
+                                        <th rowspan="1" colspan="1">creator</th>
+                                        <th rowspan="1" colspan="1">action</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <%data.forEach((i)=>{%>
+                                    <tr class="odd">
+                                        <td class=""><%=i.title%></td>
+                                        <td class="sorting_1">-</td>
+                                        <td>
+                                            <a href="">
+                                                <button title="update" type="button" value="<%=i.kategoriname%>" class="btnupdate btn btn-sm rounded-0" data-toggle="modal" data-target="#exampleModal">
+                                                    <i class="far fa-edit text-warning"></i>
+                                                </button>
+                                            </a>
+                                            <input class="idvalue" type="hidden" value="<%=i.id%>">
+                                             
+                                            <a href="">
+                                                <button title="delete" type="button" value="<%=i.kategoriname%>" class="btndelete btn btn-sm rounded-0" data-toggle="modal" data-target="#deletemodal">
+                                                    <i class="fas fa-trash-alt text-danger"></i>
+                                                </button>
+                                            </a>
+
+                                        </td>
+                                    </tr>
+                                    <%})%>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- table -->
+
+                </div>
+            </div>
+        </div>
+    </div>
